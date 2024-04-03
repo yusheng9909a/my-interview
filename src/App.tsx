@@ -104,16 +104,17 @@ const App: React.FC<AppProps> = (props: AppProps) => {
         setValue(Number(value));
     }, []);
 
-   
     useEffect(() => {
         (async () => {
+            let res: any;
             if (!value) return;
             try {
+                setDataSource([]);
                 setSpinning(true);
-                const { data } = await getDemoData(value);
-                setDataSource(data);
+                res = await getDemoData(value);
             } finally {
                 timer = setTimeout(() => {
+                    setDataSource(res.data || []);
                     setSpinning(false);
                 }, 1500);
             }
