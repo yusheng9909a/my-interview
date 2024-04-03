@@ -43,7 +43,7 @@ const MsCard: React.FC<MsCardProps> = (props: MsCardProps) => {
                                         color={badgeMap[item?.projectStatus]?.color}
                                     ></Badge>
                                 </Flex>
-                                <div>{`项目经理：${item?.prjName}`}</div>
+                                <div>{`项目经理：${item?.prjManager}`}</div>
                                 <div>{`立项日期：${item?.prjStartDate}`}</div>
                                 <div>
                                     <Flex justify='space-between'>
